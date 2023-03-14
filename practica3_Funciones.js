@@ -1,21 +1,4 @@
 
-// Crea un objeto tipo de UserException
-function UserException(message) {
-    this.message = message;
-    this.name = "UserException";
-  }
-  
-// Hacer que la excepción se convierta en una bonita cadena cuando se usa como cadena
-// (por ejemplo, por la consola de errores)
-UserException.prototype.toString = function () {
-return `${this.name}: "${this.message}"`;
-};
-
-// Crea una instancia del tipo de objeto y tírala
-throw new UserException("Valor muy alto");
-
-
-
 /*ejercicio 1: Generar una función que le ingrese por parámetro algún dato ya sea ingresado por el
 usuario o declarado anteriormente en su código y mostrar por consola el tipo de dato
 que es.
@@ -23,8 +6,10 @@ que es.
 //
 function tipoDato(dato) {    
     console.log(`El tipo de dato de: ${dato} es ${typeof(dato)}.`);
-} 
+}
+//Esta funcion la agregue por que la funcion prompt simepre devuelve un string.
 function checkType(dato){
+    // Chekea si el dato ingresado es un posible Number o Boolean y lo converte al tipo de dato valido.
     if(!isNaN(dato))
         dato = Number(dato);
     if(dato == "true" || dato == "false")
@@ -32,59 +17,75 @@ function checkType(dato){
     return dato;
 }
 tipoDato("Hola Mundo");
-tipoDato(checkType(prompt("Ingrese un dato", "dato")));
+tipoDato(checkType(prompt("Ingrese un dato")));
 
 /*ejercicio 2: Dado dos números ingresados por el usuario, se pide realizar una función que
 devuelve la resta de ambos números. Mostrar el resultado por la consola.
 */
 function restar(num1, num2){
-    if(isNaN(num1) && isNaN(num2)) return console.log("Ingrese solo numeros")
-    return num1 - num2;
+        if(isNaN(num1) || isNaN(num2)){
+            throw new TypeError("Ingrese solo numeros")
+        }
+        return num1 - num2;
 }
 
-var numero1 = prompt("Ingrese el primer numero", "Numero");
-var numero2 = prompt("Ingrese el segundo numero", "Numero");
+var numero1 = prompt("Ingrese el primer numero");
+var numero2 = prompt("Ingrese el segundo numero");
+try{
 console.log(`La resta de ${numero1} - ${numero2} es: ${restar(numero1, numero2)}`);
-
+} catch (e) {
+    console.error(`${e.name} : ${e.message}`)
+}
 /*ejercicio 3:Generar una función que le ingresen por parámetro dos valores distintos en dos
 variables a y b, luego el valor ingresado en a pasarlo a b y el valor Ingresado en b,
 Pasarlo a a y mostrarlos.
 */
 function cambio(a, b){
-    if( isNaN(a) && isNaN(b)) return console.log(`El valor de a y el de b deben ser numeros"`)
     if(a === b)
-        return console.log("Los numeros deben ser distintos");
+        throw new Error("Los valores deben ser distintos");
     let aux = a;
     a = b;
     b = aux;
     console.log(`El valor de a es: ${a} y el valor de b es: ${b}`)
 }
+try {
 cambio(prompt("Ingrese el valor de a", ""), prompt("Ingrese el valor de b", ""));
-
+} catch (error) {
+    console.error(`${error.name} : ${error.message}`)
+}
 /*ejercicio 4:Generar una función que le ingrese por parámetro el valor del lado de un cuadrado
 calcular su perímetro, su superficie, e informar los mismos en consola.
 */
 function mostrarPerimetroSuperficie(lado){
     if (isNaN(lado))
-        return console.log("El lado debe ser un numero");
-    if (lado <= 0)
-        return console.log("El lado debe ser mayor a 0");
+        throw new TypeError("El lado debe ser un numero");
+    if (lado < 0)
+        throw new RangeError("El lado debe ser mayor a 0");
     console.log(`El perimetro del cuadrado es: ${lado * 4} y la superficie es ${lado * lado}`)
 }
-
+try{
 mostrarPerimetroSuperficie(prompt("Ingrese el lado del cuadrado", ""));
+}catch (e){
+    console.error(`${e.name} : ${e.message}`)
+}
+
 
 /*ejercicio 5:Generar una función que dada una temperatura en grados fahrenheit los convierta a
 grados celsius.
 */
 function toCelsius(fahrenheit){
     if(isNaN(fahrenheit)) 
-        return console.log("Ingrese solo numeros")
+        throw new TypeError("Ingrese solo numeros")
     fahrenheit = Number(fahrenheit)
     return (fahrenheit - 32) * (5 / 9)
 }
 grados = prompt("Ingrese grados fahrenheit")
-console.log(`Los ${grados}°F grados fahrenheit en celsius son ${toCelsius(grados).toFixed(2)}°C`)
+try {
+    console.log(`Los ${grados}°F grados fahrenheit en celsius son ${toCelsius(grados).toFixed(2)}°C`)
+} catch (e) {
+    console.error(`${e.name} : ${e.message}`)
+}
+
 
 /*ejercicio 6:Realizar una función que calcule el factorial de un número ingresado por el usuario (el
 número no puede ser mayor de 10, realizar la validación). Mostrar el resultado por la
@@ -92,21 +93,27 @@ consola.
 */
 function factorial(num){
     if(isNaN(num))
-        return console.log("Ingrese solo numeros");
+        throw new TypeError("Ingrese solo numeros");
     num = Number(num);
+    if(!Number.isInteger(num))
+        throw new TypeError("Ingrese solo numeros enteros")
     if(num < 0) 
-        return console.log("Ingrese solo numeros naturales");
+        throw new RangeError("El numero ingresado no puede ser menor a 0");
     if(num > 10) 
-        return console.log("El numero ingresado no puede ser mayor a 10");
+        throw new RangeError("El numero ingresado no puede ser mayor a 10");
     if(num === 0 || num === 1) 
         return 1;
-
     for(var i = num -1; i >= 1; i--){
         num *= i;
     }
     return num;
 }
-console.log(factorial(prompt("Ingrese un numero:","0" )));
+try {
+    console.log(factorial(prompt("Ingrese un numero:")));
+} catch (e) {
+    console.error(`${e.name} : ${e.message}`);
+}
+
 
 /*ejercicio_7: Dado una cadena de caracteres ingresada por el usuario, se pide realizar un script que
 indique si ese texto es un palíndromo. Ejemplo de palíndromo: “Somos o no somos”.
@@ -251,7 +258,6 @@ Focus (código "focus"), el descuento es del 10%. El usuario introduce el artíc
 través de su código y el script saca el descuento correspondiente por la consola.
 */
 
-//Falta agregar gestion de errores;
 function descuento(codigo){
     var coches = [{codigo: "fiesta",nombre: "Ford Fiesta", desc: "5%"}, {codigo:"focus", nombre: "Ford Focus", desc: "10%"}];
     return coches.find(coche => coche.codigo == codigo).desc;
