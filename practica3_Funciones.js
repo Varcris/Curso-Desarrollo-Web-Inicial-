@@ -3,7 +3,6 @@
 usuario o declarado anteriormente en su código y mostrar por consola el tipo de dato
 que es.
 */
-//
 function tipoDato(dato) {    
     console.log(`El tipo de dato de: ${dato} es ${typeof(dato)}.`);
 }
@@ -129,6 +128,7 @@ function isPalidromo(texto){
     console.log(aux);
     return texto.localeCompare(aux, undefined, { sensitivity: 'base' }) == 0 ; //se compara ignorando mayusculas y minusculas
 }
+
 console.log(`El texto ingresado es un palidromo: ${isPalidromo(prompt("Ingrese un palidromo:", 
 "LA MAR. Ah! El anís es azul al ocaso. Claro, la canícula hará mal. Alejábase bello sol. "+
 "¡Sumerge la usada roda! A remar. ¡A La Habana, bucanero Morgan! Oleaje de la mar… ¡Al remo! ¡Corre! Playas… "+
@@ -155,11 +155,12 @@ calificación resultante según la nota ingresada:
 */
 
 function calificacion(nota){
+    
     if(isNaN(nota))
-        return "Ingrese solo numeros";
+        throw new Error("Ingrese solo numeros");
     nota = Number(nota);
     if(nota < 0 || nota > 10)
-        return "Ingrese una nota entre 0 y 10";
+        throw new RangeError("Ingrese una nota entre 0 y 10");
     if(nota >= 0 && nota <= 3)
         return "Muy deficiente"
     if(nota > 3 && nota <=5)
@@ -171,11 +172,16 @@ function calificacion(nota){
     if(nota > 7 && nota <=9)
         return "Notable"
     if(nota > 9 && nota <=10)
-        return "Sobresaliente"
+        return "Sobresaliente"    
+    
 }
-var nota = prompt("Ingrese una nota de un alumno")
-while(nota != "Salir"){
+var nota = prompt("Ingrese una nota de un alumno");
+while(nota != ""){
+    try {
     console.log(`La calificaciom de ${nota} es: ${calificacion(nota)}`);
+    } catch (e) {
+    console.error(`${e.name}: ${e.message}`);
+    }
     nota = prompt("Ingrese una nota de un alumno");
 }
 
@@ -185,24 +191,33 @@ devuelve si ese mes tiene 30 o 31 días.
 */
 
 function diasDelMesCon30o31dias(mes){
-    if(isNaN(mes)) return "Ingrese solo numeros";
-    if(mes < 1 || mes > 12) return "Ingrese un mes en numeros "
+    if(isNaN(mes)) 
+        throw new TypeError("Ingrese solo numeros");
+    mes = Number(mes)
+    if(!Number.isInteger(mes))
+        throw new TypeError("Ingrese solo numeros enteros");
+    if(mes < 1 || mes > 12)
+        throw new RangeError("Ingrese un numero entre 1 y 12")
     var año = new Date().getFullYear();
-    dias = new Date(año, mes, 0).getDate();
+    var date = new Date(año, mes, 0);
+    dias = date.getDate();
     if(dias == 30 || dias == 31)
-        return dias
-    else return "este mes no tiene 30 o 31 dias"
-    
+        return dias;
+    else return "este mes no tiene 30 o 31 dias";
 }
-
 var mes = prompt("Ingrese un mes en muneros")
-while(mes != "Salir"){
-    console.log(`Dias del mes ${mes}: ${diasDelMesCon30o31dias(mes)}`)
+while(mes != ""){
+    try {
+        console.log(`Dias del mes ${mes}: ${diasDelMesCon30o31dias(mes)}`)
+    } catch (error) {
+        console.error(`${error.name}: ${error.message}`);
+    }
     mes = prompt("Ingrese un mes en muneros")
 }
 
 /*ejercicio_11: Crear un script que genere una pirámide como el ejemplo con los números del 1 al
 número que ingrese el usuario (no puede ser mayor de 10, realizar la validación):
+
 1
 12
 123
@@ -212,21 +227,26 @@ número que ingrese el usuario (no puede ser mayor de 10, realizar la validació
 ……
 */
 function piramide(num){
-    if(isNaN(num))  
-        return console.log("Ingrese solo numeros");
-    if(num < 1 || num > 10)
-        return console.log("Ingrese un numero de entre el 1 al 10");
-
-    for (let i = 1; i <= num; i++){
-        var cadena = ""
-        for (let y = 1; y <= i ; y++) {
-            cadena += y
-       }
-        console.log(cadena)
+    try {
+        if(isNaN(num))  
+            throw new TypeError("Ingrese solo numeros");
+        num = Number(num);
+        if(num < 1 || num > 10)
+            throw new RangeError("Ingrese un numero de entre el 1 al 10");
+        console.log(typeof(num));
+        for (let i = 1; i <= num; i++){
+            var cadena = ""
+            for (let y = 1; y <= i ; y++) {
+                cadena += y
+            }
+            console.log(cadena)
     }
-
+    } catch (e) {
+        console.error(`${e.name}: ${e.message}`);
+    }
 }
-piramide(prompt("Ingrese un numero"))
+
+piramide(prompt("Ingrese un numero de entre el 1 al 10"));
 
 /*ejercicio_12: Generar una función donde ingresen dos números, el primero corresponde a la
 cantidad de bultos en stock y el segundo a la cantidad de bultos que se pueden
@@ -243,10 +263,21 @@ function bultosSueltos(stockBultos,capacidadCaja){
 }
 
 function mostrarCajasLlenasyBultosSueltos(stockBultos, capacidadCaja){
-    if(isNaN(stockBultos) || isNaN(capacidadCaja))
-        return console.log("Ingrese solo numeros");
-    return console.log(`Con ${stockBultos} bultos disponibles se pueden llenar ${cajasLLenas(stockBultos, capacidadCaja)} 
+    try {
+        if(isNaN(stockBultos) || isNaN(capacidadCaja))
+           throw new TypeError("Ingrese solo numeros");
+        stockBultos = Number(stockBultos);
+        capacidadCaja = Number(capacidadCaja);
+        if(stockBultos < 0)
+            throw new RangeError("El stock de bultos no puede ser menor a 0")
+        if(capacidadCaja < 1)
+            throw new RangeError("La capacidad de la caja no puede ser menor a 1")
+        return console.log(`Con ${stockBultos} bultos disponibles se pueden llenar ${cajasLLenas(stockBultos, capacidadCaja)} 
         cajas y quedando ${bultosSueltos(stockBultos, capacidadCaja)} bultos sueltos`)
+    } catch (e) {
+        console.error(`${e.name}: ${e.message}`);
+    }
+    
 }
 mostrarCajasLlenasyBultosSueltos(prompt("Ingrese cantidad de bultos en stock"), prompt("Ingrese cantidad de bultos que entran en una caja"))
 
@@ -260,10 +291,17 @@ través de su código y el script saca el descuento correspondiente por la conso
 
 function descuento(codigo){
     var coches = [{codigo: "fiesta",nombre: "Ford Fiesta", desc: "5%"}, {codigo:"focus", nombre: "Ford Focus", desc: "10%"}];
-    return coches.find(coche => coche.codigo == codigo).desc;
+    if(coches.some(coche => coche.codigo == codigo))
+        return coches.find(coche => coche.codigo == codigo).desc;
+    else 
+        throw Error(`No se encontro un articulo para el codigo: ${codigo}`)
 }
-var codigo = prompt("Ingrese el codigo del coche:", "fiesta")
-console.log(`El articulo con codigo ${codigo} tiene ${descuento(codigo)} de descuento`)
+try {
+    var codigo = prompt("Ingrese el codigo del coche:", "fiesta")
+    console.log(`El articulo con codigo ${codigo} tiene ${descuento(codigo)} de descuento`)
+} catch (e) {
+    console.error(`${e.name}: ${e.message}`)
+}
 
 
 
