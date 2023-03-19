@@ -49,14 +49,13 @@ while(texto !== "cancelar"){
 }
 cadenas = cadenas.slice(3);
 console.log(cadenas);
-var newCadena = arrCadenas.join()
-console.log();
+var newCadena = arrCadenas.join().replaceAll(",", " - ");
+console.log(newCadena);
 
 
 /**9. Hacer un formulario con dos campos (pesos y dólares) que al presionar un botón
 *convierte de dólares a pesos. Supondremos que un dólar son trescientos pesos.
 *Mostrar el resultado elemento de html.*/
-
 
 
 /**10. Generar la inversa del ejercicio anterior (de pesos a dólares).*/
