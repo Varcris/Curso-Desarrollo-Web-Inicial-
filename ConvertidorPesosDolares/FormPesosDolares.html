@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+</head>
+<body>
+    
+    <form id="formConverter" oninput="dolaresConvert.value = `${convertirPesosADolares(pesos.value)}` ;
+    pesosConvert.value = `${convertirDolaresAPesos(dolares.value)}`">
+        <div class="titulo"><h1>Convertidor de Pesos a Dolares</h1></div>
+        <div>
+            <label for="pesos" >Pesos</label>
+            <input type="number" name="pesos" id="pesos" placeholder="Ingrese la cantidad de pesos" />
+            <output name="dolaresConvert" for="pesos">Dolares</output>
+        </div>
+        <div class="titulo"><h1>Convertidor de Dolares a Pesos</h1></div>
+        <div>
+            <label for="dolares">Dolares</label>
+            <input type="number" name="dolares" id="dolares" placeholder="Ingrese la cantidad de dolares" />
+            <output name="pesosConvert" for="dolares">Pesos</output>
+        </div>
+    </form>
+        
+    </div>
+    <script src="mainPesosDolares.js"></script>
+</body>
+</html>
