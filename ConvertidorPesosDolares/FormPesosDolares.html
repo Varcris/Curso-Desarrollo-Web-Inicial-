@@ -8,19 +8,25 @@
 </head>
 <body>
     
-    <form id="formConverter" oninput="dolaresConvert.value = `${convertirPesosADolares(pesos.value)}` ;
-    pesosConvert.value = `${convertirDolaresAPesos(dolares.value)}`">
+    <form id="formConverter" oninput="dolaresConverted.value = `Dolares: $${convertirPesosADolares(pesos.value)}` ;
+    pesosConverted.value = `Pesos: $${convertirDolaresAPesos(dolares.value)}`">
         <div class="titulo"><h1>Convertidor de Pesos a Dolares</h1></div>
         <div>
             <label for="pesos" >Pesos</label>
-            <input type="number" name="pesos" id="pesos" placeholder="Ingrese la cantidad de pesos" />
-            <output name="dolaresConvert" for="pesos">Dolares</output>
+            <input type="number" name="pesos" id="pesos" placeholder="Ingrese la cantidad de pesos" /><br>
+            <output name="dolaresConverted" for="pesos">Doláres</output><br>
+            <label for="dolaresInput">Pesos convertidos a Doláres</label>
+            <input id="dolaresInput" type="text" placeholder="Pesos convertidos"/><br>
+            <button id="btn_aDolares" type="button">Convertir a Dolares</button>
         </div>
-        <div class="titulo"><h1>Convertidor de Dolares a Pesos</h1></div>
+        <div class="titulo"><h1>Convertidor de Doláres a Pesos</h1></div>
         <div>
-            <label for="dolares">Dolares</label>
-            <input type="number" name="dolares" id="dolares" placeholder="Ingrese la cantidad de dolares" />
-            <output name="pesosConvert" for="dolares">Pesos</output>
+            <label for="dolares">Doláres</label>
+            <input type="number" name="dolares" id="dolares" placeholder="Ingrese la cantidad de dolares" /><br>
+            <output name="pesosConverted" for="dolares">Pesos</output><br>
+            <label for="pesosInput">Doláres convertidos a Pesos</label>
+            <input id="pesosInput" type="text" placeholder="Doláres convertidos"/><br>
+            <button id="btn_aPesos" type="button" onclick="aPesos(dolares.value)">Convertir a Pesos</button>
         </div>
     </form>
         
