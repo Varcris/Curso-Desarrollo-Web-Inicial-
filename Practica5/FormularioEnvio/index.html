@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Envio cajas</title>
+</head>
+<body>
+    <form id="form">
+        <div>
+            <label for="nombreCliente">Nombre del Cliente</label><br>
+            <input type="text" name="nombreCliente" id="nombreCliente">
+        </div>
+        <div>
+            <label for="materialCaja">Material de la Caja: </label>
+            <select name="materialCaja" id="materialCaja">
+                <option value="Carton">Carton</option>
+                <option value="Plastico">Plastico</option>
+                <option value="Madera">Madera</option>
+            </select>
+        </div>  
+        <div>
+            Seleccione una dimension para la caja:
+            <label class="options" for="dimensiones1" >
+                <input type="radio"  name="dimensiones" id="dimensiones1" value="minimutas">
+                Dinimuta
+            </label>
+            <label class="options" for="dimensiones2">
+                <input type="radio" name="dimensiones" id="dimensiones2" value="medianas">
+                Mediano
+            </label>
+            <label class="options" for="dimensiones3">
+                <input type="radio" name="dimensiones" id="dimensiones3" value="grandes">
+                Grande
+            </label><br>
+        </div>
+        <div>
+            <label for="comentario">Comentarios</label>
+            <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="opcional"></textarea>
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+            <div class="error"></div>
+            <textarea name="respuesta" id="respuesta" cols="30" rows="10" readonly></textarea>
+
+        </div>
+    </form>
+    <script src="main.js" ></script>
+</body>
+</html>
