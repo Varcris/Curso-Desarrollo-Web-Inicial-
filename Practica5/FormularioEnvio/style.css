@@ -54,6 +54,17 @@ button[type="submit"]:hover {
   margin-top: 5px;
   color: red;
 }
+.mensaje {
+  font-size: 14.5px;
+  margin-top: 5px;
+  color: green;
+}
+
+.titulo {
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: px;
+}
 
 #respuesta {
   display: block;

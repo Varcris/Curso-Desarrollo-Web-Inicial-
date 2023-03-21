@@ -8,9 +8,13 @@
     <title>Envio cajas</title>
 </head>
 <body>
+    
     <form id="form">
+        <div class="titulo">
+            <h1>Formulario de Envio de Cajas</h1>
+        </div>
         <div>
-            <label for="nombreCliente">Nombre del Cliente</label><br>
+            <label for="nombreCliente">Nombre del Cliente</label>
             <input type="text" name="nombreCliente" id="nombreCliente">
         </div>
         <div>
@@ -43,6 +47,7 @@
         <div>
             <button type="submit">Enviar</button>
             <div class="error"></div>
+            <div class="mensaje"></div>
             <textarea name="respuesta" id="respuesta" cols="30" rows="10" readonly></textarea>
 
         </div>
