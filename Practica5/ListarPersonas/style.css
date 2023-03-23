@@ -1,0 +1,65 @@
+body{
+    background: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#content{
+    margin: 0 auto;
+    width: 600px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#form{
+    width: 400px;
+    margin: 0 auto;
+}
+
+#form input[type="text"]{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"]{
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background: #0dbb47;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background: #0a8332;
+}
+
+#error {
+    color: red;
+}
+
+#listaDeNombres{
+    width: 200px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+    list-style-type: none;
+}
