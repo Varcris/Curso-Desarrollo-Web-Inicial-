@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Listar Personas</title>
+</head>
+<body>
+    <div id="content">
+        <form id="form">
+            <div class="titulo">
+                <h2>Agregar Nombres a la Lista</h2>    
+            </div>
+            <div>
+                <label for="persona">Nombre y Apellido</label>
+                <input type="text" name="persona" id="persona">
+                <div id="error"></div>
+            </div>  
+            <div>
+                <button type="submit">Agregar</button>
+            </div>
+        </form>
+
+        <div class="titulo">
+            <h2>Lista de Personas</h2>    
+        </div>
+        <ul id="listaDeNombres">
+        </ul>
+        
+    </div>
+
+    <script src="main.js">
+    </script>
+    
+</body>
+</html>
