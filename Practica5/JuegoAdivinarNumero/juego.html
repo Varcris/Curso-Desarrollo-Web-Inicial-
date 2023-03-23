@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego de adivinanza</title>
+</head>
+<body>
+    <div id="content">
+    <form id="form">
+        <div class="titulo">Adivina el numero</div>
+        <div>
+            <label for="numero">Introduce un número secreto entre 0 y 5:</label>
+                <input type="number" id="numero" name="numero" min="0" max="5"><br><br>
+        </div>
+        <div>
+            <button id="btn_adivinar" type="submit">Adivinar</button>
+            <button disabled="true" id="btn_reiniciar" type="button" onclick="location.reload()">Reiniciar</button><br>
+        </div>
+        <div class="respuestas"></div>
+        <div class="respuestas"></div>
+        <div class="respuestas"></div>
+    </form>
+    <script src="main.js"></script>
+    </div>
+</body>
+</html>
