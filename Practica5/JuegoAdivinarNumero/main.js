@@ -1,4 +1,4 @@
-let id = (id) => document.getElementById(id);
+let id = (id) => document.getElementById(id); 
 let classes = (classes) => document.getElementsByClassName(classes);
 let numSecreto = Math.floor(Math.random() * 6);
 let intentos = 5;
@@ -9,7 +9,6 @@ let form = id("form");
 
 function adivinarNumero() {
     let numero = id("numero");
-    numero
     if (numero.value == numSecreto) {
         respuesta[2].innerHTML = "";
         respuesta[0].style.color = "green";
@@ -30,7 +29,6 @@ function adivinarNumero() {
             numero.value = "";
         }
     }
-    
 }
 
 form.addEventListener("submit", (e) => {
