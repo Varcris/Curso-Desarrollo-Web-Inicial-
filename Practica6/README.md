@@ -1,0 +1,6 @@
+# Practica6
+
+Trabajo hecho por:
+..................................
+| Cristian Gustavo Vargas Rondal |
+..................................

@@ -1,0 +1,112 @@
+body {
+    background-image: url('/Practica6/images/bg-palm.jpg');
+    background-color: blanchedalmond;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.flex-links{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    align-items: center;
+}
+
+.flex-links > a  {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    flex-basis: content;
+    align-items: stretch;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.flex-links > a > button {
+    border: 0px;
+    border-radius: 40px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px;
+    padding-left: 50px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; 
+    flex-basis: auto;
+    min-height: 70px;
+}
+
+.flex-links > a > button:hover {
+    background-color: #685f5f;
+    color: #ffffff;
+}
+
+
+.redes-sociales {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: 650px;
+    flex-basis: auto;
+    justify-content: space-around;
+}
+
+.redes-sociales > i {
+    font-size: 30px;
+    padding: 10px;
+    color: #000000;
+    margin-top: 100px;
+}
+
+.redes-sociales > i:hover {
+    color: #6b6262;
+}
+
+.flex-links > a > button {
+    position: relative;
+}
+
+.flex-links > a > i {
+
+    font-size: 30px;
+    color: green;
+    position: absolute;
+    padding: 15px;
+    margin: 15px;
+    align-self: flex-start;
+    flex-basis: auto;
+}
+
+
+.flex-container > div > #nombre {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #000000;
+    font-weight: bold;
+    margin: 10px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.flex-container > div > img {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    border-radius: 40px;
+    margin: 10px;
+    margin-top: 100px;
+}
+
