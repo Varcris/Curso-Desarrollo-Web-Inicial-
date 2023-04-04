@@ -6,75 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <style>
-        body{
-            background-image: url('/Formulario-Bootstrap/images/ondas.svg');
-            background-repeat: no-repeat;
-            background-position: bottom;
-            height: 650px;
-            background-color: rgb(35, 24, 64);
-        }   
-        
-        .btn-pink{
-            background-color: rgb(226, 25, 131);
-            color:white;
-        }
-        .btn-pink:hover{
-            background-color: rgba(226, 68, 162);
-            color:white;
-        }
-
-        .text-pink{
-            color: rgb(226, 25, 131);
-        }
-        .text-pink:hover{
-            color: rgba(226, 88, 182);
-        
-        }
-        
-        .bg{
-            background-image: url('/Formulario-Bootstrap/images/img-login.jpg');
-            background-position: right;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Form-Bootstrap</title>
+    <!--Título: Nunito Black-->
 
 </head>
 <body>
+
     <!-- Contenedor -->
     <div class="container mt-5">
         <div class="row align-items-stretch mx-3">
+
             <!-- Imagen -->
-            <div class="col bg d-none d-md-block col-md-4 col-lg-5 col-xl-6 ">
+            <div class="col bg-image d-none d-md-block col-md-4 col-lg-5 col-xl-6">
                 <div class="row d-flex justify-content-center h-100 ">
-                    <div class="col-3 align-self-center">
+                    <div class="col d-none d-lg-block col-xl-4 m-auto">
                         <img src="images/logo-blanco.svg" alt="Logo">
                     </div>
-                        
                 </div>
-                    
             </div>
-            <!-- Formulario -->
 
-            <form class="col px-5 bg-white " >
-                <h2 class="fw-bold text-start py-3 my-5">Login</h2>
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control rounded-5" id="floatingEmail" placeholder="Email">
-                    <label for="floatingEmail" class="form-label">Email</label>
-                    
+            <!-- Formulario -->
+            <form class="col px-5 bg-white ">
+
+                <!-- Título -->
+                <div class="title-style text-start py-3 my-5">Login</div>
+
+                <!-- Input Email -->
+                <div class=" input-group  mb-3 ">
+
+                    <!-- Icono -->
+                    <span class="input-group-text rounded-start-5 border-color" id="icon1">
+                        <i class="bi bi-envelope iconColor"></i>
+                    </span>
+
+                    <!-- Input -->
+                    <div class="form-floating">
+                        <input type="email" class="form-control rounded-end-5 border-color" id="floatingEmail"
+                            placeholder="Email">
+                        <label for="floatingEmail" class="form-label inputStyle">Email</label>
+                    </div>
                 </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control rounded-5 border-2" id="floatinPassword" placeholder="Contraseña">
-                    <label for="floatingPassword" class="form-label">Contraseña</label>
-                </div>  
+
+                <!-- Input Password -->
+                <div class="input-group mb-3">
+
+                    <!-- Icono -->
+                    <span class="input-group-text rounded-start-5 border-color" id="basic-addon1">
+                        <i class="bi bi-lock iconColor"></i>
+                    </span>
+
+                    <!-- Input -->
+                    <div class="form-floating">
+                        <input type="password" class="form-control rounded-end-5 border-color inputStyle"
+                            id="floatinPassword" placeholder="Contraseña">
+                        <label for="floatingPassword" class="form-label inputStyle">Contraseña</label>
+                    </div>
+                </div>
+
+                <!-- Link -->
                 <div class="mt-2">
-                    <span class="float-end"><a class="text-pink" href="#">¿Olvidaste tu contraseña?</a></span>
+                    <span class="float-end"><a class="text-color link-style" href="#">¿Olvidaste tu
+                            contraseña?</a></span>
                 </div>
-                
-                <div class="d-grid py-5 my-5 pb-5">
-                    <button type="submit" class="btn btn-pink rounded-5 p-2">Ingresar</button>
+
+                <!-- Botón -->
+                <div class="d-grid py-5 my-5 pb-5 ">
+                    <button type="submit" class="btn btn-color link-style rounded-5 p-2">Ingresar</button>
                 </div>
             </form>
         </div>
