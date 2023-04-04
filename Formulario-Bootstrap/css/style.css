@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+EAN13+Text&family=Nunito:wght@400;700;900&display=swap');
+
+body{
+    background-image: url('/Formulario-Bootstrap/images/ondas.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    background-color: #22193F;
+}   
+
+.btn-color{
+    background-color: #E21982;
+    color:white;
+}
+.btn-color:hover{
+    background-color:#dd4794;
+    color:white;
+}
+.text-color{
+    color: #E21982; 
+}
+.text-color:hover{
+    color:#dd4794;
+}
+
+.iconColor{
+    color: #6A2A83;
+}
+
+.border-color{
+    border-color: #C4C4C4 ;
+}
+
+
+.bg-image{
+    background-image: url('/Formulario-Bootstrap/images/img-login.jpg');
+    background-position: right;
+}
+
+.logo-image{
+    background-image: url('/Formulario-Bootstrap/images/logo-blanco.svg');
+    background-position: center;
+}
+
+.title-style{
+    font-family: 'Libre Barcode EAN13 Text', cursive;
+    font-family: 'Nunito', sans-serif;
+    color:#22193F;
+    font-weight: 900;
+    font-size: 28px;
+}
+ 
+
+.inputStyle{
+    font-family: 'Libre Barcode EAN13 Text', cursive;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.link-style{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
