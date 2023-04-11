@@ -20,14 +20,14 @@ function crearArrayNumAleatorios(longitud, min, max){
 //Variables globales usadas para crear el identificador a cada lista desordenada creada
 var i = 0; 
 var id = "lista_" + i;
-
+var listArea = document.getElementById("listArea");
 //Funcion para crear una lista desordenada HTML a partir de un array
 function crearListaDesordenada(array){
     var listaSinOrden = document.createElement('ul');
     i++;
     id = "lista_" + i;
     listaSinOrden.id = id;
-    document.body.appendChild(listaSinOrden);
+    listArea.appendChild(listaSinOrden);
     listaSinOrden.textContent = id;
     array.forEach( value => {
         let elemento = document.createElement('li');
