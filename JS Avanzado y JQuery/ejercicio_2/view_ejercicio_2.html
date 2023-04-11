@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #a, #b, #c, #d, #e, #f{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #a button, #b button, #c button, #d button, #e button, #f button{
+            width: 60px;
+            height: 25px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #a button:hover, #b button:hover, #c button:hover, #d button:hover, #e button:hover, #f button:hover{
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Dado el array = [1,2,3,4,5,6]</h1>
+        <div id="a">
+            <h3>a. Iterar por todos los elementos dentro de un array utilizando while y mostrarlos en 
+                pantalla.</h3>
+            <button id="btn_a">Mostrar</button>
+            <p id="p_a">
+            </p>
+        </div>
+    
+        <div id="b">
+            <h3>b. Iterar por todos los elementos dentro de un array utilizando for y mostrarlos en
+                pantalla.</h3>
+            <button id="btn_b">Mostrar</button>
+            <p id="p_b">
+            </p>
+        </div>
+    
+        <div id="c">
+            <h3>c. Iterar por todos los elementos dentro de un array utilizando .forEach y
+                mostrarlos en pantalla.</h3>
+            <button id="btn_c">Mostrar</button>
+            <p id="p_c">
+            </p>
+        </div>
+    
+        <div id="d">
+            <h3>d. Mostrar todos los elementos dentro de un array sumándole uno a cada uno.
+            </h3>
+            <button id="btn_d">Mostrar</button>
+            <p id="p_d">
+            </p>
+        </div>
+    
+        <div id="e">
+            <h3>e. Generar una copia de un array pero con todos los elementos incrementados en 1.
+            </h3>
+            <button id="btn_e">Generar</button>
+            <p id="p_e">
+            </p>
+        </div>
+    
+        <div id="f">
+            <h3>f. Calcular el promedio
+            </h3>
+            <button id="btn_f">Calcular</button>
+            <p id="p_f">
+            </p>
+        </div>
+    </div>   
+    <script src="ejercicio_2.js"></script>
+</body>
+</html>
