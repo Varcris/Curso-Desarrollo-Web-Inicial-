@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   
+    <title>ejercicio 6</title>
+</head>
+<body>
+    <div class="content">
+        <h1>Ejercicio 6</h1>
+        <h3>Dado un array que contiene ["azul", "amarillo", "rojo", "verde", "café", "rosa"] determinar
+            si un color introducido por el usuario a través de un prompt se encuentra dentro del
+            array o no.</h3>
+        <form id="form_6">
+            <label for="color">Introduce un color</label>
+            <input type="text" name="color" id="color">
+            <input type="submit" value="Enviar">
+        </form>  
+
+        <h3>Resultado</h3>
+        <p id="respuesta_6"></p>
+
+        
+    </div>
+
+    <div  class="content">
+        <h1>Ejercicio 7</h1>
+        <h3>Crear una función que reciba un arreglo con números y devuelva un nuevo arreglo con
+            solo los números pares</h3>
+        <form id="form_7">
+            <label for="numeros">Introduce números separados por comas</label>
+            <input type="text" name="numeros" id="numeros">
+            <input type="submit" value="Enviar">
+        </form>
+
+        <h3>Resultado</h3>
+        <p id="respuesta_7"></p>
+    </div>
+
+    <div class="content">
+        <h1>Ejercicio 8</h1>
+        <h3>Crear una función que reciba un arreglo con palabras, crear un nuevo arreglo que
+            contenga sólo las palabras que empiezan con una vocal.</h3>
+        <form id="form_8">
+            <label for="palabras">Introduce palabras separadas por comas</label>
+            <input type="text" name="palabras" id="palabras">
+            <input type="submit" value="Enviar">
+        </form>
+
+        <h3>Resultado</h3>
+        <p id="respuesta_8"></p>
+    </div>
+
+    <div class="content">
+        <h1>Ejercicio 9</h1>
+        <h3>Crear un método que permite intercambiar las posiciones de dos elementos de un
+            arreglo en base a sus índices</h3>
+
+        <form id="form_select">
+            <p>
+                <label for="lang">Arreglo de</label>
+                <select id="selectArrays" name="selecArrays">
+                    <option selected>seleccione un array</option>
+                    <option value="colores">Colores</option>
+                    <option value="numeros">Numeros</option>
+                    <option value="palabras">Palabras</option>
+                </select>
+            </p>
+            <p><input type="submit" value="Seleccionar"/></p>
+        </form>
+        
+        <div class="titulo">
+            <h3>Selecciona dos elementos a intercambiar</h3>
+        </div>
+        <form id="form_checkbox" >
+            
+        
+        </form>
+
+        <div>
+            <button id="btn_intercambiar">Intercambiar</button>
+        <div>
+            <fieldset>
+                <legend>Resultado</legend>
+                <p id="resultado"></p>
+            </fieldset>
+        </div>
+    </div>
+     <script src="main.js"></script>
+</body>
+</html>
