@@ -107,6 +107,7 @@ $(document).ready(function(){
         $("input:checkbox").change(function(){
             if($("input:checkbox:checked").length > 2){
                 this.checked = false;
+                alert("Solo puede seleccionar dos elementos");
             }
         });
 
