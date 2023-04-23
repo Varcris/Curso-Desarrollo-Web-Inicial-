@@ -1,0 +1,58 @@
+#banner-principal{
+    width: 100%;
+    height: auto;
+    position: relative; 
+}
+
+#text-principal-1{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#text-principal-2{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#btn-principal{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #FFB800;
+    border-color: #FFB800;
+}
+
+
+
+#banner-secundario{
+    width: 100%;
+    height: auto;
+    position: relative; 
+}
+
+#text-secundario-1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#btn-secundario{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #FFB800;
+    border-color: #FFB800;
+}
+
